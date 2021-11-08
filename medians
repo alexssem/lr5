@@ -1,0 +1,30 @@
+nums1 = []
+m = int(input("Введите кол-во элементов списка I"))
+for i in range(m):
+    f = float(input("введите следующий элемент:"))
+    nums1.append(f)
+print(f'Current List {nums1}')
+nums1.sort()
+print(f'After sorting: {nums1}')
+
+nums2 = []
+n = int(input("Введите кол-во элементов списка II"))
+for i in range(n):
+    f = float(input("введите следующий элемент:"))
+    nums2.append(f)
+print(f'Current List {nums2}')
+nums2.sort()
+print(f'After sorting: {nums2}')
+
+
+result = [j for i in [nums1, nums2] for j in i]
+print("Concatenated list:" + str(result))
+result.sort()
+print(f'After sorting: {result}')
+
+def medians(result):
+    nums = sorted(result)
+    middle1 = (len(nums) - 1) // 2
+    middle2 = len(nums) // 2
+    return (nums[middle1] + nums[middle2]) / 2
+print(medians(result))
